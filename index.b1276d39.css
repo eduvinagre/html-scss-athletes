@@ -1,0 +1,135 @@
+body {
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+.people {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: center;
+  gap: 40px 30px;
+  padding: 30px 35px;
+  display: grid;
+}
+
+.people .person {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media screen and (width >= 500px) {
+  .people {
+    grid-template-columns: repeat(2, 200px);
+    max-width: 499px;
+  }
+}
+
+@media screen and (width >= 1000px) {
+  .people {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.person {
+  margin-top: 40px;
+  padding-inline: 35px;
+  transition: transform 1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.person:hover {
+  z-index: 1;
+  transform: translateY(-10px);
+}
+
+.person .details .extra {
+  display: none;
+}
+
+.person:hover .details .extra {
+  z-index: 1;
+  display: block;
+}
+
+.photo {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo img {
+  border-radius: 200px;
+  width: 200px;
+  height: 200px;
+  transition: width 1s, height 1s, border-radius 1s;
+  display: block;
+}
+
+.photo:hover img {
+  z-index: 1;
+  border-radius: 60px;
+  width: 240px;
+  height: 240px;
+}
+
+.rank {
+  color: #8b0000;
+  text-align: center;
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  padding: 4px;
+  line-height: 32px;
+  transition: transform 1s;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.person:hover .rank {
+  z-index: 1;
+  transform: translate(50%, -50%);
+}
+
+.details {
+  text-align: center;
+  padding: 10px;
+}
+
+.name {
+  color: #2f4f4f;
+  letter-spacing: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  text-decoration: none;
+  transition: color 1s;
+}
+
+.sport, .pay {
+  color: #000;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  line-height: 25px;
+}
+
+.sport.sport:after, .pay.sport:after {
+  content: ",";
+}
+
+.sport.pay:before, .pay.pay:before {
+  content: "US$";
+}
+/*# sourceMappingURL=index.b1276d39.css.map */
