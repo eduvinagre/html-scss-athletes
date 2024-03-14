@@ -1,135 +1,107 @@
-body {
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-}
-
 .people {
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 200px);
   justify-content: center;
   gap: 40px 30px;
   padding: 30px 35px;
   display: grid;
 }
 
-.people .person {
-  width: 100%;
-  max-width: 200px;
-}
-
-@media screen and (width >= 500px) {
-  .people {
-    grid-template-columns: repeat(2, 200px);
-    max-width: 499px;
-  }
-}
-
-@media screen and (width >= 1000px) {
+@media (width >= 1000px) {
   .people {
     grid-template-columns: repeat(4, 200px);
   }
 }
 
-.person {
-  margin-top: 40px;
-  padding-inline: 35px;
-  transition: transform 1s;
+.people__person.container {
   position: relative;
-  overflow: hidden;
+}
+
+.person {
+  cursor: pointer;
+  transform-origin: 50% 113px;
+  border-radius: 12px;
+  margin: -10px -10px -16px;
+  padding: 10px 10px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: transform 1s;
 }
 
 .person:hover {
   z-index: 1;
-  transform: translateY(-10px);
+  background-color: #eee;
+  position: absolute;
+  transform: scale(1.2);
 }
 
-.person .details .extra {
+.person:hover .person__extra {
+  display: block;
+}
+
+.person:hover .person__image {
+  border-radius: 60px;
+}
+
+.person__extra {
+  text-align: center;
+  margin-top: 11px;
+  font-size: 18px;
+  line-height: 21px;
   display: none;
 }
 
-.person:hover .details .extra {
-  z-index: 1;
-  display: block;
-}
-
-.photo {
-  justify-content: center;
-  align-items: center;
+.person__photo {
   display: flex;
   position: relative;
-  overflow: hidden;
 }
 
-.photo img {
+.person__image {
+  aspect-ratio: 1;
   border-radius: 200px;
-  width: 200px;
-  height: 200px;
-  transition: width 1s, height 1s, border-radius 1s;
-  display: block;
+  width: 100%;
+  transition: border-radius 1s;
 }
 
-.photo:hover img {
-  z-index: 1;
-  border-radius: 60px;
-  width: 240px;
-  height: 240px;
-}
-
-.rank {
+.person__rank {
+  aspect-ratio: 1;
   color: #8b0000;
-  text-align: center;
-  z-index: 1;
+  font-size: 16px;
+  font-style: 900;
   background-color: #fff;
-  border-radius: 32px;
+  border-radius: 50%;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
   width: 32px;
   height: 32px;
-  margin-right: 10px;
-  padding: 4px;
-  line-height: 32px;
-  transition: transform 1s;
+  display: flex;
   position: absolute;
-  top: 50%;
   right: 10px;
-  transform: translateY(-50%);
 }
 
-.person:hover .rank {
-  z-index: 1;
-  transform: translate(50%, -50%);
+.person__details {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
 }
 
-.details {
-  text-align: center;
-  padding: 10px;
-}
-
-.name {
+.person__name {
   color: #2f4f4f;
-  letter-spacing: 0;
   text-align: center;
-  font-family: Arial, sans-serif;
+  margin-top: 8px;
   font-size: 20px;
+  font-weight: 900;
   line-height: 23px;
-  text-decoration: none;
-  transition: color 1s;
 }
 
-.sport, .pay {
-  color: #000;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  font-size: 22px;
-  line-height: 25px;
-}
-
-.sport.sport:after, .pay.sport:after {
+.person__sport:after {
   content: ",";
 }
 
-.sport.pay:before, .pay.pay:before {
-  content: "US$";
+.person__pay:before {
+  content: "$";
+}
+
+.person__pay:after {
+  content: "M";
 }
 /*# sourceMappingURL=index.b1276d39.css.map */
