@@ -3,7 +3,6 @@ $secondary-background-color: #fff;
 $rank-color: #8B0000;
 $name-color: #2F4F4F;
 
-
 .people {
   display: grid;
   grid-template-columns: repeat(2, 200px);
@@ -23,9 +22,11 @@ $name-color: #2F4F4F;
 .person {
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
+
   padding: 10px 10px 16px;
   margin: -10px -10px -16px;
   border-radius: 12px;
+
   transform-origin: center 113px;
   transition: transform 1s;
 
@@ -33,6 +34,7 @@ $name-color: #2F4F4F;
     position: absolute;
     z-index: 1;
     transform: scale(1.2);
+
     background-color: $primary-background-color;
 
     .person__extra {
